@@ -33,8 +33,8 @@ const StyledHeaderMenu = styled.nav`
     list-style: none;
     justify-content: center;
 
-    a {
-      text-decoration: none;
+    @media ${theme.media.tablet} {
+      display: none;
     }
   }
 `;
