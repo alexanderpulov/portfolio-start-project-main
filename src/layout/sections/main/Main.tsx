@@ -4,12 +4,13 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
+import { font } from "../../../styles/Common";
 
 export const Main = () => {
   return (
     <StyledMain>
       <Container>
-        <FlexWrapper align="center" justify="space-between">
+        <FlexWrapper align="center" justify="space-around" wrap="wrap">
           <div>
             <SmallText>Hi There</SmallText>
             <Name>
@@ -35,6 +36,7 @@ const StyledMain = styled.section`
 const PhotoWrapper = styled.div`
   position: relative;
   z-index: 0;
+  margin-top: 65px;
 
   &::before {
     content: "";
@@ -46,6 +48,13 @@ const PhotoWrapper = styled.div`
     top: -24px;
     left: 24px;
     z-index: -1;
+
+    @media ${theme.media.mobile} {
+      width: 314px;
+      height: 414px;
+      top: -17px;
+      left: 20px;
+    }
   }
 `;
 
@@ -54,6 +63,12 @@ const Photo = styled.img`
   height: 430px;
   object-fit: cover;
   display: flex;
+  margin-right: 25px;
+
+  @media ${theme.media.mobile} {
+    width: 310px;
+    height: 380px;
+  }
 `;
 
 const SmallText = styled.span`
@@ -63,15 +78,19 @@ const SmallText = styled.span`
 
 const Name = styled.h1`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 50px;
-  font-weight: 700;
+  ${font({
+    family: "'Josefin Sans', sans-serif",
+    weight: 700,
+    Fmax: 50,
+    Fmin: 36,
+  })}
   letter-spacing: 2.5px;
   margin: 10px 0;
 
   span {
     position: relative;
     z-index: 0;
+    white-space: nowrap;
 
     &::before {
       position: absolute;
@@ -84,9 +103,16 @@ const Name = styled.h1`
       background-color: ${theme.colors.accent};
     }
   }
+
+  @media ${theme.media.mobile} {
+    margin: 15px 0 22px;
+  }
 `;
 
 const MainTitle = styled.h2`
-  font-size: 27px;
-  font-weight: 400;
+  ${font({
+    weight: 400,
+    Fmax: 27,
+    Fmin: 20,
+  })}
 `;
