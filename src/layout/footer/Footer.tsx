@@ -3,56 +3,62 @@ import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
+import { font } from "../../styles/Common";
+import { Container } from "../../components/Container";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <FlexWrapper direction="column" align="center">
-        <Name>Svetlana</Name>
-        <SocialList>
-          <SocialItem>
-            <SocialLink>
-              <Icon
-                height="21px"
-                width="21px"
-                viewBox="0 0 21px 0"
-                iconId={"instagram"}
-              />
-            </SocialLink>
-          </SocialItem>
-          <SocialItem>
-            <SocialLink>
-              <Icon
-                height="21px"
-                width="21px"
-                viewBox="0 0 21px 0"
-                iconId={"telegram"}
-              />
-            </SocialLink>
-          </SocialItem>
-          <SocialItem>
-            <SocialLink>
-              <Icon
-                height="21px"
-                width="21px"
-                viewBox="0 0 21px 0"
-                iconId={"vk"}
-              />
-            </SocialLink>
-          </SocialItem>
-          <SocialItem>
-            <SocialLink>
-              <Icon
-                height="21px"
-                width="21px"
-                viewBox="0 0 21px 0"
-                iconId={"linkedin"}
-              />
-            </SocialLink>
-          </SocialItem>
-        </SocialList>
-        <Copyright>&copy; 2023 Svetlana Dyablo, All Rights Reserved.</Copyright>
-      </FlexWrapper>
+      <Container>
+        <FlexWrapper direction="column" align="center">
+          <Name>Svetlana</Name>
+          <SocialList>
+            <SocialItem>
+              <SocialLink>
+                <Icon
+                  height="21px"
+                  width="21px"
+                  viewBox="0 0 21px 0"
+                  iconId={"instagram"}
+                />
+              </SocialLink>
+            </SocialItem>
+            <SocialItem>
+              <SocialLink>
+                <Icon
+                  height="21px"
+                  width="21px"
+                  viewBox="0 0 21px 0"
+                  iconId={"telegram"}
+                />
+              </SocialLink>
+            </SocialItem>
+            <SocialItem>
+              <SocialLink>
+                <Icon
+                  height="21px"
+                  width="21px"
+                  viewBox="0 0 21px 0"
+                  iconId={"vk"}
+                />
+              </SocialLink>
+            </SocialItem>
+            <SocialItem>
+              <SocialLink>
+                <Icon
+                  height="21px"
+                  width="21px"
+                  viewBox="0 0 21px 0"
+                  iconId={"linkedin"}
+                />
+              </SocialLink>
+            </SocialItem>
+          </SocialList>
+          <Copyright>
+            &copy; 2023 Svetlana Dyablo, All Rights Reserved.
+          </Copyright>
+        </FlexWrapper>
+      </Container>
     </StyledFooter>
   );
 };
@@ -63,9 +69,12 @@ const StyledFooter = styled.footer`
 `;
 
 const Name = styled.span`
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 22px;
-  font-weight: 700;
+  ${font({
+    family: '"Josefin Sans", sans-serif',
+    weight: 700,
+    Fmax: 22,
+    Fmin: 17,
+  })}
   letter-spacing: 3px;
 `;
 

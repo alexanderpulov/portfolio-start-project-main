@@ -63,7 +63,7 @@ const Photo = styled.img`
   height: 430px;
   object-fit: cover;
   display: flex;
-  margin-right: 25px;
+  margin-right: 20px;
 
   @media ${theme.media.mobile} {
     width: 310px;
