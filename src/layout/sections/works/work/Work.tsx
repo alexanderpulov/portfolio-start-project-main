@@ -29,8 +29,9 @@ export const Work = (props: WorkPropsType) => {
 };
 
 const StyledWork = styled.div`
-  max-width: 540px;
-  width: 100%;
+  width: 330px;
+  flex-grow: 1;
+
   background-color: ${theme.colors.secondaryBg};
 
   ${Link} {
@@ -39,6 +40,10 @@ const StyledWork = styled.div`
     & + ${Link} {
       margin-left: 20px;
     }
+  }
+
+  @media ${theme.media.desktop} {
+    max-width: 540px;
   }
 `;
 
@@ -58,21 +63,31 @@ const ImgWrapper = styled.div`
     }
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+  }
+
   &:hover {
-    ${Button} {
+    &::before {
       opacity: 1;
     }
 
-    &::before {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(4px);
+    ${Button} {
+      opacity: 1;
+    }
+  }
+
+  @media ${theme.media.tablet} {
+    ${Button}, &::before {
+      opacity: 1;
     }
   }
 `;
