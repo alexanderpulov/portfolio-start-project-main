@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { S } from "./Skills_Styles";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
@@ -46,7 +46,7 @@ export const Skills = () => {
   ];
 
   return (
-    <StyledSkills>
+    <S.Skills>
       <Container>
         <SectionTitle>My Skills</SectionTitle>
         <FlexWrapper wrap="wrap">
@@ -62,8 +62,6 @@ export const Skills = () => {
           })}
         </FlexWrapper>
       </Container>
-    </StyledSkills>
+    </S.Skills>
   );
 };
-
-const StyledSkills = styled.section``;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
 
+const Skills = styled.section``;
+
 const Skill = styled.div`
   width: 330px;
   flex-grow: 1;
@@ -20,7 +22,7 @@ const SkillText = styled.p`
   text-align: center;
 `;
 
-export const IconWrapper = styled.div`
+const IconWrapper = styled.div`
   position: relative;
 
   &::before {
@@ -39,6 +41,7 @@ export const IconWrapper = styled.div`
 `;
 
 export const S = {
+  Skills,
   Skill,
   IconWrapper,
   SkillTitle,
