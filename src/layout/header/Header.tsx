@@ -3,7 +3,6 @@ import { Logo } from "../../components/logo/Logo";
 import { Container } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { DesktopMenu } from "./headerMenu/desktopMenu/DesktopMenu";
-
 import { S } from "./Header_Styles";
 import { MobileMenu } from "./headerMenu/mobileMenu/MobileMenu";
 
