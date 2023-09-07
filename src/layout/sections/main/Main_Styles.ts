@@ -92,6 +92,10 @@ const MainTitle = styled.h2`
     Fmax: 27,
     Fmin: 20,
   })}
+
+  p {
+    display: none;
+  }
 `;
 
 export const S = {
