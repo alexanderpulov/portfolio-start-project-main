@@ -22,7 +22,7 @@ export const Footer = () => {
   ];
 
   return (
-    <S.Footer>
+    <S.Footer id="footer">
       <Container>
         <FlexWrapper direction="column" align="center">
           <S.Name>Svetlana</S.Name>

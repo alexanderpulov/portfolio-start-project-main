@@ -6,7 +6,7 @@ import { Container } from "../../../components/Container";
 
 export const Contacts = () => {
   return (
-    <S.Contacts>
+    <S.Contacts id="contact">
       <Container>
         <SectionTitle>Contact</SectionTitle>
         <S.Form>
