@@ -24,6 +24,8 @@ export const Testimony: React.FC = () => {
 };
 
 const StyledTestimony = styled.section`
+  position: relative;
+
   ${S.IconWrapper} {
     margin: 28px 0 72px;
   }
