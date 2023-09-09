@@ -31,7 +31,6 @@ export const Menu: React.FC = () => {
         return (
           <S.MenuItem key={index}>
             <S.NavLink
-              offset={0}
               spy={true}
               activeClass="active"
               smooth={true}
