@@ -7,8 +7,7 @@ import { Work } from "./work/Work";
 import socialImg from "../../../assets/images/proj-1.webp";
 import timerImg from "../../../assets/images/proj-2.webp";
 import { Container } from "../../../components/Container";
-
-// const tabsItems = ["All", "Langing page", "React", "Spa"];
+import { AnimatePresence, motion } from "framer-motion";
 
 const tabsItems: Array<{
   title: string;
@@ -38,12 +37,14 @@ const worksData = [
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     src: socialImg,
     type: "spa",
+    id: 1,
   },
   {
     title: "Timer",
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim",
     src: timerImg,
     type: "React",
+    id: 2,
   },
 ];
 
@@ -75,11 +76,22 @@ export const Works: React.FC = () => {
           currentFilterStatus={currentFilterStatus}
         />
         <FlexWrapper justify="space-between" align="flex-start" wrap="wrap">
-          {filteredWorks.map((w, index) => {
-            return (
-              <Work key={index} title={w.title} text={w.text} src={w.src} />
-            );
-          })}
+          <AnimatePresence>
+            {filteredWorks.map((w) => {
+              return (
+                <motion.div
+                  style={{ width: "400px", flexGrow: 1, maxWidth: "540px" }}
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  key={w.id}
+                >
+                  <Work key={w.id} title={w.title} text={w.text} src={w.src} />
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </FlexWrapper>
       </Container>
     </S.Works>
